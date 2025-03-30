@@ -15,7 +15,7 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"post">;
 
 const post = Astro.props;
 const { Content } = await post.render();
@@ -24,8 +24,8 @@ const { Content } = await post.render();
 <PageLayout title={post.data.title} description={post.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrev href="/blog">
-        Back to blog
+      <BackToPrev href="/posts">
+        Back to posts
       </BackToPrev>
     </div>
     <div class="space-y-1 my-10">
